@@ -13,7 +13,7 @@ tokens = [
     'DIV',
     'DECIMAL',
     'ENTERO',
-    # 'CADENA',
+    'CADENA',
     # 'ID'
 ] + list(reservadas.values())
 
@@ -54,10 +54,10 @@ def t_ID(t):
     return t
 
 # -------------- -> TOKEN CADENA <- -------------- 
-# def t_CADENA(t):
-#     r'\".*?\"'
-#     t.value = t.value[1:-1] # remuevo las comillas
-#     return t 
+def t_CADENA(t):
+    r'\".*?\"'
+    t.value = t.value[1:-1] # remuevo las comillas
+    return t 
 
 # -------------- -> COMENTARIOS <- -------------- 
 # Múltiples líneas /* .. */
@@ -169,6 +169,7 @@ def p_expresion_numerica(t):
     '''
     expresion           : ENTERO
                         | DECIMAL
+                        | CADENA
     '''
     if len(t) == 2:
         if isinstance(t[1], int):
@@ -177,6 +178,9 @@ def p_expresion_numerica(t):
         elif isinstance(t[1], float):
             t[0] = Primitive(float(t[1]), Type.FLOAT, t.lineno(
                 1), find_column(input, t.slice[1]))
+        elif isinstance(t[1], str):
+            t[0] = Primitive(str(t[1]), Type.STRING, t.lineno(1),
+                             find_column(input, t.slice[1]))
 
 
 def p_error(t):
