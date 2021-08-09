@@ -1,1 +1,6 @@
-imprimir(5+5)
+// Comentario
+/*  Comentario Multilena
+    fsdfkdfjskdjflkdfj
+    flkdjlafksjdfkljsdlfjldkfjlk
+*/
+print(5+4+5*4)

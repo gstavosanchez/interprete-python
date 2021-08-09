@@ -6,6 +6,5 @@ class Print(Instruccion):
         self.expression: Instruccion = expression
         
     def execute(self, environment):
-        print('Llego al imprimir')
         value = self.expression.execute(environment)
         print(value)

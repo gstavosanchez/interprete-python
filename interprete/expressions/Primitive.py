@@ -8,8 +8,6 @@ class Primitive(Instruccion):
         Instruccion.__init__(self, line, column)
         self.value = value
         self.type = type
-        
+
     def execute(self, environment):
-        # return Return(self.value, self.type)
-        print(f"value: {self.value}")
         return self.value

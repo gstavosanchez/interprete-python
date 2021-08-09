@@ -13,11 +13,8 @@ class Arithmetic(Instruccion):
     def execute(self, environment):
         left_value = self.op_left.execute(environment)
         right_value = self.op_right.execute(environment)
-        # result: Return = Return(0, Type.INT)
-        # result.value = left_value.value + right_value.value
-        print('Entro a ejecutar las aritmeticas')
+
         if self.operator == Arithmetic_Operator.SUMA:       # SUMA (+)
-            print(left_value + right_value)
             return (left_value) + (right_value)
         elif self.operator == Arithmetic_Operator.RESTA:    # RESTA (-)
             return (left_value) - (right_value)

@@ -7,6 +7,7 @@ global_envrioment = Enviroment(None)
 
 try:
     for instruccion in ast:
-        instruccion.excute(global_envrioment)
-except:
-    print('Error al ejecutar la instruccion')
+        instruccion.execute(global_envrioment)
+except Exception:
+    print('Error en la ejecucion')
+    print(Exception)
