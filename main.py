@@ -1,6 +1,5 @@
-import grammar as g
+import grammar.grammar as g
 from interprete.tableSymbol.Enviroment import Enviroment
-
 
 ast = g.parse()
 global_envrioment = Enviroment(None)

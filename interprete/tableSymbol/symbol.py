@@ -4,9 +4,17 @@ from interprete.types.Type import Type
 class Symbol:
     '''
         Define a varible
-        :param value: value of symbol
-        :param symbol_id: id of symbol
-        :param symbol_type: type of symbol
+
+        Parameters
+        ----------
+        value: Instruccion 
+            > Valor de la variable
+
+        symbol_id: str
+            > Id o nombre de la variable    
+
+        symbol_type: Type
+            > Tipo de variable
     '''
 
     def __init__(self, value, symbol_id: str, symbol_type: Type):

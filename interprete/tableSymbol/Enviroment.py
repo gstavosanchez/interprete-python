@@ -3,6 +3,14 @@ from interprete.types import Type
 
 
 class Enviroment:
+    '''
+        Define el Entorno
+
+        Parameters
+        ----------
+        previous_enviroment: Enviroment 
+            > entorno anterior.
+    '''
     def __init__(self, previous_enviroment=None):
         self.previous = previous_enviroment
         self.variables: dict = {}
