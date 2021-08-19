@@ -11,6 +11,7 @@ class Enviroment:
         previous_enviroment: Enviroment 
             > entorno anterior.
     '''
+
     def __init__(self, previous_enviroment=None):
         self.previous = previous_enviroment
         self.variables: dict = {}
@@ -36,3 +37,8 @@ class Enviroment:
         return None
 
     # def set_function(self, )
+    def get_global(self):
+        env: Enviroment = self
+        while env.previous != None:
+            env = env.previous
+        return env
